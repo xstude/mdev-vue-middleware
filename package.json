@@ -1,0 +1,16 @@
+{
+  "name": "mdev-vue-middleware",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./index.js",
+  "dependencies": {
+    "underscore": "1.8.3"
+  },
+  "scripts": {
+    "test": "none"
+  },
+  "keywords": [
+  ],
+  "author": "lx",
+  "license": "2016-2017"
+}
