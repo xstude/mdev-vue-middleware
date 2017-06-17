@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var _ = require('underscore');
 var base = path.normalize(__dirname).replace(/\\/g, '/');
+var tag = false;
 
 
 function VueMiddleWare (options) {
@@ -200,6 +201,12 @@ VueMiddleWare.prototype.apply = function (compiler) {
     var _this = this;
 
     compiler.plugin('make', function (compilation, callback) {
+        if (tag) {
+            callback();
+            return;
+        }
+
+        tag = true;
         vueParser.init(_this.options.root, _this.options.projectRoot);
         vueParser.parseModule(_this.options.root, _this.options.projectRoot);
         vueParser.parseWidget(_this.options.root, _this.options.projectRoot);
